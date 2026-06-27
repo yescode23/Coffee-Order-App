@@ -16,6 +16,8 @@
     --padding-page: 20px 5%;
 }
 
+/* Navbar */
+
 .navbar-container {
     background-color: var(--second-color);
     display: flex;
@@ -66,16 +68,22 @@
     background-color: unset;
     border: unset;
     cursor: pointer;
+    display: flex;
+    column-gap: 5px;
 }
 
 .hamburger-button {
     color: var(--third-color);
-    font-size: 20px;
+    font-size: 2rem;
     background-color: unset;
     border: unset;
     cursor: pointer;
     display: none;
 }
+
+/* Navbar */
+
+/* Header */
 
 .header-container {
     text-align: center;
@@ -113,6 +121,10 @@
     color: var(--third-color);
     background-color: var(--second-color);
 }
+
+/* Header */
+
+/* Main Container */
 
 .main-container {
     padding: var(--padding-page);
@@ -159,6 +171,10 @@ h2 {
     background-color: var(--second-color);
 }
 
+/* Main Container */
+
+/* Footer */
+
 .footer-container {
     padding: var(--padding-page);
     display: flex;
@@ -166,8 +182,13 @@ h2 {
     align-items: center;
 }
 
+/* Footer */
+
 /* Mobile Responsive (768px) */
 @media (max-width: 768px) {
+    
+    /* Navbar */
+
     .navigation {
         position: absolute;
         top: 0;
@@ -182,6 +203,10 @@ h2 {
         background-color: var(--second-color);
         box-shadow: 0px 3px 5px var(--third-color);
         transition: all .50s ease;
+    }
+
+    .navigation.active {
+        left: 0;
     }
 
     .navigation ul {
@@ -201,11 +226,24 @@ h2 {
         display: flex;
     }
 
-    .navigation.active {
-        left: 0;
+    .hamburger-button {
+        display: block;
     }
 
-    .hamburger-button {
-        display: flex;
+    /* Navbar */
+
+    /* Header */
+
+    .input-name {
+        width: 70%;
+    }
+
+    /* Header */
+
+    /* Main Container */
+
+    .products-container {
+        flex-direction: column;
+        row-gap: 50px;
     }
 }
