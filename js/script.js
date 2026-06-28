@@ -12,3 +12,6 @@ hamburgerToggle.addEventListener('click', function() {
         hamburgerIcon.classList.replace('bx-x', 'bx-menu');
     }
 })
+
+// Dark Mode Button Function
+const darkModeToggle = document.getElementById('dark-mode-toggle');
