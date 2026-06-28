@@ -16,6 +16,11 @@
     --padding-page: 20px 5%;
 }
 
+/* body {
+    background-color: var(--second-color);
+    color: var(--third-color);
+} */
+
 /* Navbar */
 
 .navbar-container {
@@ -183,6 +188,30 @@ h2 {
 }
 
 /* Footer */
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: var(--third-color);
+    color: var(--second-color);
+}
+
+body.dark-mode .navbar-container {
+    background-color: var(--third-color);
+}
+
+body.dark-mode .navigation a {
+    color: var(--second-color);
+}
+
+body.dark-mode .dark-mode-button {
+    color: var(--second-color);
+}
+
+body.dark-mode .coffee-product {
+    color: var(--third-color);
+    box-shadow: unset;
+}
 
 /* Mobile Responsive (768px) */
 @media (max-width: 768px) {
