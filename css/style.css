@@ -215,7 +215,7 @@ body.dark-mode .coffee-product {
 
 /* Mobile Responsive (768px) */
 @media (max-width: 768px) {
-    
+
     /* Navbar */
 
     .navigation {
@@ -275,4 +275,26 @@ body.dark-mode .coffee-product {
         flex-direction: column;
         row-gap: 50px;
     }
+
+    /* Main Container */
+
+    /* Dark Mode */
+
+    body.dark-mode .hamburger-button {
+        color: var(--second-color);
+    }
+
+    body.dark-mode .navigation a {
+        color: var(--third-color);
+    }
+
+    body.dark-mode .logo-display a {
+        color: var(--primary-color);
+    }
+
+    body.dark-mode .dark-mode-button {
+        color: var(--third-color);
+    }
+
+    /* Dark Mode */
 }
