@@ -1,4 +1,5 @@
 // Hamburger Button Function
+
 const navigationLink = document.querySelector('.navigation');
 const hamburgerToggle = document.getElementById('hamburger-toggle');
 const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -13,7 +14,10 @@ hamburgerToggle.addEventListener('click', function() {
     }
 })
 
+// Hamburger Button Function
+
 // Dark Mode Button Function
+
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const bodyElement = document.body;
 const currentThemeKey = localStorage.getItem('theme');
@@ -41,5 +45,24 @@ darkModeToggle.addEventListener('click', function() {
         disableDarkMode();
     } else {
         enableDarkMode();
+    }
+})
+
+// Dark Mode Button Function
+
+// Guest Function
+
+const inputGuestName = document.querySelector('.input-name');
+const displayName = document.getElementById('display-name');
+const submitGuestName = document.querySelector('.submit-name-button');
+
+submitGuestName.addEventListener('click', function() {
+    const guestName = inputGuestName.value;
+    localStorage.setItem('localGuestName', guestName);
+
+    if (guestName === '') {
+        alert('You Should Input Your Name!');
+    } else {
+        displayName.innerText = guestName;
     }
 })
