@@ -4,7 +4,7 @@ const navigationLink = document.querySelector('.navigation');
 const hamburgerToggle = document.getElementById('hamburger-toggle');
 const hamburgerIcon = document.getElementById('hamburger-icon');
 
-hamburgerToggle.addEventListener('click', function() {
+hamburgerToggle.addEventListener('click', function () {
     navigationLink.classList.toggle('active')
 
     if (navigationLink.classList.contains('active')) {
@@ -40,7 +40,7 @@ if (currentThemeKey === 'dark-mode') {
     disableDarkMode();
 }
 
-darkModeToggle.addEventListener('click', function() {
+darkModeToggle.addEventListener('click', function () {
     if (bodyElement.classList.contains('dark-mode')) {
         disableDarkMode();
     } else {
@@ -56,7 +56,7 @@ const inputGuestName = document.querySelector('.input-name');
 const displayName = document.getElementById('display-name');
 const submitGuestName = document.querySelector('.submit-name-button');
 
-submitGuestName.addEventListener('click', function() {
+submitGuestName.addEventListener('click', function () {
     const guestName = inputGuestName.value;
     localStorage.setItem('localGuestName', guestName);
 
@@ -67,4 +67,35 @@ submitGuestName.addEventListener('click', function() {
     }
 })
 
-// 
+// Add Cart Button Function
+
+let cart = [];
+const coffeeProduct = document.querySelectorAll('.coffee-product');
+
+coffeeProduct.forEach(coffee => {
+    const cartButton = coffee.querySelector('.add-cart-button');
+    const coffeeID = coffee.getAttribute('data-id');
+    const coffeeName = coffee.getAttribute('data-name');
+    const coffeePrice = parseInt(coffee.getAttribute('data-price'));
+
+    if (cartButton) {
+        cartButton.addEventListener('click', function () {
+            const existingCoffee = cart.find(coffee => coffee.id === coffeeID);
+
+            if (existingCoffee) {
+                existingCoffee.quantity += 1;
+            } else {
+                cart.push({
+                    id: coffeeID,
+                    name: coffeeName,
+                    price: coffeePrice,
+                    quantity: 1
+                });
+
+                localStorage.setItem('productStorage', JSON.stringify(cart));
+            }
+
+            console.log(cart)
+        });
+    }
+})
