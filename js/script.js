@@ -69,7 +69,7 @@ submitGuestName.addEventListener('click', function () {
 
 // Add Cart Button Function
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('productStorage')) || [];
 const coffeeProduct = document.querySelectorAll('.coffee-product');
 
 coffeeProduct.forEach(coffee => {
@@ -91,10 +91,9 @@ coffeeProduct.forEach(coffee => {
                     price: coffeePrice,
                     quantity: 1
                 });
-
-                localStorage.setItem('productStorage', JSON.stringify(cart));
             }
 
+            localStorage.setItem('productStorage', JSON.stringify(cart));
             console.log(cart)
         });
     }
