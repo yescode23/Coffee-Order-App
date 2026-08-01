@@ -85,6 +85,7 @@ coffeeProduct.forEach(coffee => {
     const coffeeID = coffee.getAttribute('data-id');
     const coffeeName = coffee.getAttribute('data-name');
     const coffeePrice = parseInt(coffee.getAttribute('data-price'));
+    const coffeeStock = Number(coffee.getAttribute('data-stock'));
 
     if (cartButton) {
         cartButton.addEventListener('click', function () {
@@ -97,6 +98,7 @@ coffeeProduct.forEach(coffee => {
                     id: coffeeID,
                     name: coffeeName,
                     price: coffeePrice,
+                    stock: coffeeStock,
                     quantity: 1
                 });
             }
