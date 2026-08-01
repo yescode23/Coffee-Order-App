@@ -55,17 +55,25 @@ darkModeToggle.addEventListener('click', function () {
 const inputGuestName = document.querySelector('.input-name');
 const displayName = document.getElementById('display-name');
 const submitGuestName = document.querySelector('.submit-name-button');
+const savedGuestName = localStorage.getItem('localGuestName');
+
+if (savedGuestName) {
+    displayName.innerText = savedGuestName;
+}
 
 submitGuestName.addEventListener('click', function () {
-    const guestName = inputGuestName.value;
-    localStorage.setItem('localGuestName', guestName);
+    const guestName = inputGuestName.value.trim();
 
     if (guestName === '') {
         alert('You Should Input Your Name!');
     } else {
+        localStorage.setItem('localGuestName', guestName);
         displayName.innerText = guestName;
+        inputGuestName.value = '';
     }
 })
+
+// Guest Function
 
 // Add Cart Button Function
 
