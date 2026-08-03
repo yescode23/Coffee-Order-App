@@ -16,10 +16,9 @@
     --padding-page: 20px 5%;
 }
 
-/* body {
-    background-color: var(--second-color);
-    color: var(--third-color);
-} */
+body {
+    height: 100vh;
+}
 
 /* Navbar */
 
@@ -113,4 +112,125 @@ table th {
 
 table td {
     padding: 0 300px 0 0;
+}
+
+/* #checkout-button {
+    color: var(--second-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    padding: 5px 7px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .30s ease;
+} */
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: var(--third-color);
+    color: var(--second-color);
+}
+
+body.dark-mode .navbar-container {
+    background-color: var(--third-color);
+}
+
+body.dark-mode .navigation a {
+    color: var(--second-color);
+}
+
+body.dark-mode .dark-mode-button {
+    color: var(--second-color);
+}
+
+body.dark-mode .coffee-product {
+    color: var(--third-color);
+    box-shadow: unset;
+}
+
+/* Mobile Responsive (768px) */
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .navigation {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 30px;
+        width: 200px;
+        height: 100vh;
+        padding: var(--padding-page);
+        background-color: var(--second-color);
+        box-shadow: 0px 3px 5px var(--third-color);
+        transition: all .50s ease;
+    }
+
+    .navigation.active {
+        left: 0;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 30px;
+    }
+
+    .navigation .logo-display {
+        display: block;
+    }
+
+    .navigation .logo-display a {
+        color: var(--primary-color);
+        font-size: 2rem;
+        text-decoration: none;
+        display: flex;
+    }
+
+    .hamburger-button {
+        display: block;
+    }
+
+    /* Navbar */
+
+    /* Header */
+
+    .input-name {
+        width: 70%;
+    }
+
+    /* Header */
+
+    /* Main Container */
+
+    .products-container {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    /* Main Container */
+
+    /* Dark Mode */
+
+    body.dark-mode .hamburger-button {
+        color: var(--second-color);
+    }
+
+    body.dark-mode .navigation a {
+        color: var(--third-color);
+    }
+
+    body.dark-mode .logo-display a {
+        color: var(--primary-color);
+    }
+
+    body.dark-mode .dark-mode-button {
+        color: var(--third-color);
+    }
+
+    /* Dark Mode */
 }
