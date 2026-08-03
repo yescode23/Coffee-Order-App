@@ -135,7 +135,7 @@
     padding: var(--padding-page);
 }
 
-h2 {
+.title {
     text-align: center;
 }
 
