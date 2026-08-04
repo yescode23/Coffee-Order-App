@@ -64,7 +64,7 @@ if (savedGuestName) {
     removeNameButton.innerText = 'Remove';
     headerContainer.appendChild(removeNameButton);
 
-    removeNameButton.addEventListener('click', function() {
+    removeNameButton.addEventListener('click', function () {
         const removePopUp = confirm('Are you sure to remove your name ?');
         if (removePopUp === true) {
             localStorage.removeItem('localGuestName');
@@ -73,4 +73,45 @@ if (savedGuestName) {
         }
     });
 
+}
+
+// Display Guest Name in Cart Page
+
+// Display Coffee Product in Cart Page
+
+const table = document.querySelector('.table');
+const cart = JSON.parse(localStorage.getItem('productStorage'));
+
+if (cart) {
+    for (let i = 1; i <= cart.length; i++) {
+        const rowProduct = document.createElement('tr');
+        table.appendChild(rowProduct);
+
+        const tdCoffeeName = document.createElement('td');
+        const tdQuantity = document.createElement('td');
+        const tdPrice = document.createElement('td');
+
+        rowProduct.appendChild(tdCoffeeName);
+        rowProduct.appendChild(tdQuantity);
+        rowProduct.appendChild(tdPrice);
+
+        if (i === 1) {
+            tdCoffeeName.innerText = cart[0].id;
+            tdQuantity.innerText = cart[0].name;
+            tdPrice.innerText = cart[0].price;
+
+        } else if (i === 2) {
+            tdCoffeeName.innerText = cart[1].id;
+            tdQuantity.innerText = cart[1].name;
+            tdPrice.innerText = cart[1].price;
+
+            
+        } else if (i === 3) {
+            tdCoffeeName.innerText = cart[2].id;
+            tdQuantity.innerText = cart[2].name;
+            tdPrice.innerText = cart[2].price;
+        }
+    }
+
+    console.log(cart)
 }

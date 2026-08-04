@@ -115,16 +115,14 @@ table {
     border-spacing: 0;
 }
 
-table tr {
-    padding: 15px 0;
-}
-
 table th {
-    padding: 0 300px 0 0;
+    padding: 0 300px 15px 0;
+    border-bottom: 1px solid;
 }
 
 table td {
-    padding: 0 300px 0 0;
+    padding: 15px 300px 15px 0;
+    border-bottom: 1px solid;
 }
 
 /* #checkout-button {
