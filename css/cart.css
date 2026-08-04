@@ -92,6 +92,19 @@ body {
 .header-container {
     padding: var(--padding-page);
     border-bottom: 2px solid;
+    display: flex;
+    column-gap: 15px;
+}
+
+.remove-name-button {
+    color: var(--second-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    padding: 5px 7px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .30s ease;
 }
 
 .main-container {

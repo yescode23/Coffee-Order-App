@@ -53,9 +53,24 @@ darkModeToggle.addEventListener('click', function () {
 // Display Guest Name in Cart Page
 
 const displayName = document.getElementById('display-name');
-const headerContainer = document.querySelector('header-container');
+const headerContainer = document.querySelector('.header-container');
 const savedGuestName = localStorage.getItem('localGuestName');
 
 if (savedGuestName) {
     displayName.innerText = savedGuestName;
+
+    const removeNameButton = document.createElement('button');
+    removeNameButton.classList.add('remove-name-button')
+    removeNameButton.innerText = 'Remove';
+    headerContainer.appendChild(removeNameButton);
+
+    removeNameButton.addEventListener('click', function() {
+        const removePopUp = confirm('Are you sure to remove your name ?');
+        if (removePopUp === true) {
+            localStorage.removeItem('localGuestName');
+            displayName.innerText = '';
+            headerContainer.removeChild(removeNameButton);
+        }
+    });
+
 }
