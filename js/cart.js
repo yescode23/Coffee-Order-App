@@ -91,7 +91,7 @@ if (cart) {
         const tdQuantity = document.createElement('td');
         const tdPrice = document.createElement('td');
         const tdActionButton = document.createElement('td');
-        
+
         rowProduct.appendChild(tdCoffeeName);
         rowProduct.appendChild(tdQuantity);
         rowProduct.appendChild(tdPrice);
@@ -107,9 +107,6 @@ if (cart) {
         removeButton.classList.add('action-button');
         removeButton.innerText = 'Remove Coffee';
 
-        tdActionButton.style.display = 'flex';
-        tdActionButton.style.columnGap = '10px';
-
         tdActionButton.appendChild(plusButton);
         tdActionButton.appendChild(minusButton);
         tdActionButton.appendChild(removeButton);
@@ -119,12 +116,15 @@ if (cart) {
             tdQuantity.innerText = cart[0].quantity;
             tdPrice.innerText = cart[0].price;
 
+            plusButton.addEventListener('click', function () {
+                tdQuantity.innerText = cart[0].quantity + 1;
+            })
         } else if (i === 2) {
             tdCoffeeName.innerText = cart[1].name;
             tdQuantity.innerText = cart[1].quantity;
             tdPrice.innerText = cart[1].price;
 
-            
+
         } else if (i === 3) {
             tdCoffeeName.innerText = cart[2].name;
             tdQuantity.innerText = cart[2].quantity;

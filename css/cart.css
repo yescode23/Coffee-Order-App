@@ -130,6 +130,7 @@ table td {
     background-color: var(--primary-color);
     font-size: 16px;
     padding: 5px 7px;
+    margin-right: 10px;
     border: 2px solid var(--primary-color);
     border-radius: 30px;
     cursor: pointer;
