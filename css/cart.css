@@ -125,7 +125,7 @@ table td {
     border-bottom: 1px solid;
 }
 
-/* #checkout-button {
+.action-button {
     color: var(--second-color);
     background-color: var(--primary-color);
     font-size: 16px;
@@ -134,7 +134,7 @@ table td {
     border-radius: 30px;
     cursor: pointer;
     transition: all .30s ease;
-} */
+}
 
 /* Dark Mode */
 

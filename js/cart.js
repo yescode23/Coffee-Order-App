@@ -90,25 +90,44 @@ if (cart) {
         const tdCoffeeName = document.createElement('td');
         const tdQuantity = document.createElement('td');
         const tdPrice = document.createElement('td');
-
+        const tdActionButton = document.createElement('td');
+        
         rowProduct.appendChild(tdCoffeeName);
         rowProduct.appendChild(tdQuantity);
         rowProduct.appendChild(tdPrice);
+        rowProduct.appendChild(tdActionButton);
+
+        const plusButton = document.createElement('button');
+        plusButton.classList.add('action-button');
+        plusButton.innerText = '+';
+        const minusButton = document.createElement('button');
+        minusButton.classList.add('action-button');
+        minusButton.innerText = '-';
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('action-button');
+        removeButton.innerText = 'Remove Coffee';
+
+        tdActionButton.style.display = 'flex';
+        tdActionButton.style.columnGap = '10px';
+
+        tdActionButton.appendChild(plusButton);
+        tdActionButton.appendChild(minusButton);
+        tdActionButton.appendChild(removeButton);
 
         if (i === 1) {
-            tdCoffeeName.innerText = cart[0].id;
-            tdQuantity.innerText = cart[0].name;
+            tdCoffeeName.innerText = cart[0].name;
+            tdQuantity.innerText = cart[0].quantity;
             tdPrice.innerText = cart[0].price;
 
         } else if (i === 2) {
-            tdCoffeeName.innerText = cart[1].id;
-            tdQuantity.innerText = cart[1].name;
+            tdCoffeeName.innerText = cart[1].name;
+            tdQuantity.innerText = cart[1].quantity;
             tdPrice.innerText = cart[1].price;
 
             
         } else if (i === 3) {
-            tdCoffeeName.innerText = cart[2].id;
-            tdQuantity.innerText = cart[2].name;
+            tdCoffeeName.innerText = cart[2].name;
+            tdQuantity.innerText = cart[2].quantity;
             tdPrice.innerText = cart[2].price;
         }
     }
